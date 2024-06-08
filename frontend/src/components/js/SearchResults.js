@@ -1,11 +1,24 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Card, CardContent, CardActions, Button } from '@mui/material';
 
 function SearchResults({ results }) {
+  const handleAdd = (id) => {   
+  };
+
   return (
-    <div>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
       {results.map((result) => (
-        <Typography key={result.id}>{result.title}</Typography>
+        <Card key={result.id} variant="outlined" style={{ width: '300px', display: 'flex', flexDirection: 'column' }}>
+          <CardContent style={{ flex: '1', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <img src={result.coverPhotoURL} alt="Cover" style={{ width: '100%', maxWidth: '200px', height: 'auto' }} />
+            <Typography variant="h6" style={{ textAlign: 'center', marginTop: '10px' }}>{result.title}</Typography>
+            <Typography variant="subtitle1">{`Author: ${result.author}`}</Typography>
+            <Typography variant="body1">{`Reading Level: ${result.readingLevel}`}</Typography>
+          </CardContent>
+          <CardActions style={{ justifyContent: 'flex-end' }}>          
+            <Button size="small" onClick={() => handleAdd(result.id)}>Add to reading list</Button>
+          </CardActions>
+        </Card>
       ))}
     </div>
   );
