@@ -1,10 +1,7 @@
 import React from 'react';
 import { Typography, Card, CardContent, CardActions, Button } from '@mui/material';
 
-function SearchResults({ results }) {
-  const handleAdd = (id) => {   
-  };
-
+function SearchResults({ results, onAdd, onRemove }) {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
       {results.map((result) => (
@@ -15,12 +12,15 @@ function SearchResults({ results }) {
             <Typography variant="subtitle1">{`Author: ${result.author}`}</Typography>
             <Typography variant="body1">{`Reading Level: ${result.readingLevel}`}</Typography>
           </CardContent>
-          <CardActions style={{ justifyContent: 'flex-end' }}>          
-            <Button size="small" onClick={() => handleAdd(result.id)}>Add to reading list</Button>
+          <CardActions style={{ justifyContent: 'space-between' }}>
+            <Button size="small" onClick={() => onRemove(result.title)}>Remove from list</Button>
+            <Button size="small" onClick={() => onAdd(result)}>Add to reading list</Button>
           </CardActions>
         </Card>
       ))}
     </div>
   );
 }
+
 export default SearchResults;
+
