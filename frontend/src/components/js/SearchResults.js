@@ -10,5 +10,4 @@ function SearchResults({ results }) {
     </div>
   );
 }
-
 export default SearchResults;
