@@ -24,7 +24,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
+ //to do - create a module for queries
 const BOOKS_QUERY = gql`
   query Books {
     books {

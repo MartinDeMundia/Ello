@@ -4,40 +4,41 @@
 # Ello Engineering Challenge
 
 👋 Hello,
-This is a submission of the Ello technical challenge program
+This is a submission of the Ello technical challenge program by <b>Martin M. Mugambi</b>, which allows teachers or students to add books they need to read on a reading list,
+edit by way of removing the books they do not want to read from the reading list and finally viewing the reading list.
 
-## About Ello
+## Overview on Ello (https://books.ello.com)
 
 Ello is a forward-thinking educational technology company dedicated to revolutionizing the way children learn to read. Our mission is to empower young readers with the tools they need to become proficient and passionate readers. We believe that fostering a love for reading is essential for a child's academic and personal growth.
 
 
-### Data
-To get access to data that you will use for this challenge you can switch into the `src/backend` folder and run
+### Data - Backend
+The program has a backend which provides data to the frontend via an API i.e graphql.
+Navigate to the folder /backend and run the below commands :
+```bash
+npm install
+```
+Then run the following command to start the server
+```bash
+npm start
+```
+Open [http://localhost:4000](http://localhost:4000) to view the graphql playground in your browser.
+
+
+### UI - Frontend
+
+- The frontend interface has been created using React as the frontend framework.
+- The file .env contains the URL to the backend i.e `http://localhost:4000/` where the backend is hosted on the same computer.
+- The use of react hooks have been widely used to allow fetch and manipulate the data on the front end user interface.
+- Library MUI i.e material-ui has aided in quick implementation of styled widgets and elements in addition to themeing using the colors provided.
+- Execute the below commands to start the front end :
 
 ```bash
 npm install
 ```
-
 Then run the following command to start the server
-
 ```bash
 npm start
 ```
-
-This start a Graphql server at the url `http://localhost:4000/`, the server has a single query `books` that returns a list of books. 
-
-```graphql
-query Books {
-  books {
-    author
-    coverPhotoURL
-    readingLevel
-    title
-  }
-}
-```
-
-You can use this query to get the list of books to display in your frontend. You may need to adjust the `coverPhotoURL` to be a valid URL. The photos are in the `src/frontend/assets` directory.
-
-
+Open [http://localhost:3000](http://localhost:3000) to view the Book assignment program in your browser.
 
