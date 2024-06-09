@@ -1,5 +1,7 @@
 import React from 'react';
 import { Typography, Card, CardContent, CardActions, Button } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function SearchResults({ results, onAdd, onRemove }) {
   return (
@@ -13,8 +15,8 @@ function SearchResults({ results, onAdd, onRemove }) {
             <Typography variant="body1">{`Reading Level: ${result.readingLevel}`}</Typography>
           </CardContent>
           <CardActions style={{ justifyContent: 'space-between' }}>
-            <Button size="small" onClick={() => onRemove(result.title)}>Remove from list</Button>
-            <Button size="small" onClick={() => onAdd(result)}>Add to reading list</Button>
+            <Button size="small" startIcon={<DeleteIcon />} onClick={() => onRemove(result.title)}>Remove from list</Button>
+            <Button size="small" startIcon={<AddIcon />} onClick={() => onAdd(result)}>Add to reading list</Button>
           </CardActions>
         </Card>
       ))}
