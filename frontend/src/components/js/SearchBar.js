@@ -20,14 +20,16 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <TextField
-      fullWidth
-      label="Search"
-      variant="outlined"
-      value={searchTerm}
-      onChange={handleChange}
-      onKeyPress={handleKeyPress}
-    />
+    <div style={{ width: '50%' }}>
+      <TextField
+        fullWidth
+        label="Search"
+        variant="outlined"
+        value={searchTerm}
+        onChange={handleChange}
+        onKeyPress={handleKeyPress}
+      />
+    </div>
   );
 }
 export default SearchBar;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Container, Grid, IconButton, Dialog, DialogTitle, DialogContent, Button, CircularProgress } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography, Container, Grid, IconButton, Dialog, DialogTitle, DialogContent, Button, CircularProgress } from '@mui/material';
 import BookListIcon from '@mui/icons-material/Book';
 import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -41,12 +41,17 @@ function Main() {
     <div>
       <AppBar position="sticky">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Ello: Book Assignment View
-          </Typography>
+          <Box display="flex" flexDirection="column" alignItems="center" sx={{ marginRight: '10px' }}>
+            <img src="/assets/logo.svg" alt="Logo" style={{ width: '40px', height: '40px' }} />
+            <Typography variant="caption">Book Assignment View</Typography>
+          </Box>
+          <Box sx={{ flexGrow: 1 }} />
           <IconButton color="inherit" onClick={handleCartOpen}>
             <BookListIcon />
-            <Typography variant="body1" style={{ marginLeft: '5px' }}>{cart.length}</Typography>
+            <Typography variant="h3" component="div" sx={{ flexGrow: 1 , fontSize: '10px' }}>
+                  Click to view added reading list
+            </Typography>
+            <Typography variant="" style={{ marginLeft: '5px' }}>{cart.length}</Typography>
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -93,7 +98,7 @@ function Main() {
               </Grid>
             ))
           ) : (
-            <Typography variant="body1">No books in cart</Typography>
+            <Typography variant="body1">Hmmm...your reading list is empty!</Typography>
           )}
         </DialogContent>
       </Dialog>

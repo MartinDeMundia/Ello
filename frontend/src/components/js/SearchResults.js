@@ -15,8 +15,8 @@ function SearchResults({ results, onAdd, onRemove }) {
             <Typography variant="body1">{`Reading Level: ${result.readingLevel}`}</Typography>
           </CardContent>
           <CardActions style={{ justifyContent: 'space-between' }}>
-            <Button size="small" startIcon={<DeleteIcon />} onClick={() => onRemove(result.title)}>Remove from list</Button>
-            <Button size="small" startIcon={<AddIcon />} onClick={() => onAdd(result)}>Add to reading list</Button>
+            <Button size="small" startIcon={<DeleteIcon />} onClick={() => onRemove(result.title)} sx={{ fontSize: '8px' }}>Remove from list</Button>
+            <Button size="small" startIcon={<AddIcon />} onClick={() => onAdd(result)} sx={{ fontSize: '8px' }}>Add to reading list</Button>
           </CardActions>
         </Card>
       ))}
